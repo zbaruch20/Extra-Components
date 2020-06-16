@@ -25,7 +25,7 @@ public interface Deque<T> extends DequeKernel<T> {
      * @aliases reference returned by front
      * @requires this /= <>
      * @ensures <pre>
-     * < front > is prefix of this
+     * {@literal <front>} is prefix of this
      * </pre>
      */
     T front();
@@ -37,7 +37,7 @@ public interface Deque<T> extends DequeKernel<T> {
      * @aliases reference returned by back
      * @requires this /= <>
      * @ensures <pre>
-     * < back > is suffix of this
+     * {@literal <back>} is suffix of this
      * </pre>
      */
     T back();
@@ -53,8 +53,8 @@ public interface Deque<T> extends DequeKernel<T> {
      * @updates this
      * @requires this /= <>
      * @ensures <pre>
-     * < replaceFront > is prefix of #this  and
-     * this = < x > * #this[1, |#this|)
+     * {@literal <replaceFront>} is prefix of #this  and
+     * this = {@literal <x>} * #this[1, |#this|)
      * </pre>
      */
     T replaceFront(T x);
@@ -70,8 +70,8 @@ public interface Deque<T> extends DequeKernel<T> {
      * @updates this
      * @requires this /= <>
      * @ensures <pre>
-     * < replaceBack > is suffix of #this  and
-     * this = #this[0, |#this| - 1) * < x >
+     * {@literal <replaceBack>} is suffix of #this  and
+     * this = #this[0, |#this| - 1) * {@literal <x>}
      * </pre>
      */
     T replaceBack(T x);

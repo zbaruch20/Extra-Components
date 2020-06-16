@@ -35,7 +35,7 @@ public interface DequeKernel<T> extends Standard<Deque<T>>, Iterable<T> {
      *            the entry to be added
      * @aliases reference x
      * @updates this
-     * @ensures this = < x > * #this
+     * @ensures this = {@literal <x>} * #this
      */
     void pushFront(T x);
 
@@ -46,7 +46,7 @@ public interface DequeKernel<T> extends Standard<Deque<T>>, Iterable<T> {
      *            the entry to be added
      * @aliases reference x
      * @updates this
-     * @ensures this = #this * < x >
+     * @ensures this = #this * {@literal <x>}
      */
     void pushBack(T x);
 
@@ -56,7 +56,7 @@ public interface DequeKernel<T> extends Standard<Deque<T>>, Iterable<T> {
      * @return the entry removed
      * @updates this
      * @requires this /= <>
-     * @ensures #this = < popFront > * this
+     * @ensures #this = {@literal <popFront>} * this
      */
     T popFront();
 
@@ -66,7 +66,7 @@ public interface DequeKernel<T> extends Standard<Deque<T>>, Iterable<T> {
      * @return the entry removed
      * @updates this
      * @requires this /= <>
-     * @ensures #this = this * < popBack >
+     * @ensures #this = this * {@literal <popBack>}
      */
     T popBack();
 

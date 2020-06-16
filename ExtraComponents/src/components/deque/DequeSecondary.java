@@ -78,15 +78,13 @@ public abstract class DequeSecondary<T> implements Deque<T> {
          * Alternate adding and subtracting hash values of all elements in Deque
          * times its position
          */
-        for (int i = 0; i < this.length(); i++) {
-            //Rotate like a Queue
-            T current = this.popFront();
+        int i = 0;
+        for (T current : this) {
             if (i % 2 == 0) {
-                hash += (i * current.hashCode());
+                hash += (i++ * current.hashCode());
             } else {
-                hash -= (i * current.hashCode());
+                hash -= (i++ * current.hashCode());
             }
-            this.pushBack(current);
         }
 
         return hash;
@@ -98,13 +96,13 @@ public abstract class DequeSecondary<T> implements Deque<T> {
 
         if (obj == this) {
             //Objects are equal if both are same reference
-            isEqual = true;
+            return true;
         } else if (obj == null) {
             //Objects cannot be equal is obj is null (this can never be null)
-            isEqual = false;
+            return false;
         } else if (!(obj instanceof Deque<?>)) {
             //Objects cannot be equal if obj isn't a deque
-            isEqual = false;
+            return false;
         } else {
             //Now we know obj is a deque so we can safely cast
             @SuppressWarnings("unchecked")
@@ -116,11 +114,9 @@ public abstract class DequeSecondary<T> implements Deque<T> {
              */
             if (this.hashCode() == objDeque.hashCode()
                     && this.length() == objDeque.length()) {
-
                 if (this.length() == 0) {
                     isEqual = true;
                 } else {
-
                     /*
                      * Objects are equal if first element is equal and rest of
                      * deques are equal

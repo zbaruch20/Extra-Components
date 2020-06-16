@@ -39,28 +39,28 @@ public class Deque3<T> extends DequeSecondary<T> {
      *
      * @param <T>
      *            type of {@code Stack} entries
-     * @param st1
+     * @param s1
      *            the {@code Stack} to shift an element from
-     * @param st2
+     * @param s2
      *            the {@code Stack} to shift an element to
      * @updates leftStack, rightStack
      * @ensures <pre>
-     * st1 * rev(st2) = #s1t * rev(#st2)  and
-     * |st1| = |#st1| - 1
+     * s1 * rev(s2) = #s1 * rev(#s2)  and
+     * |s1| = |#s1| - 1
      * </pre>
      */
-    private static <T> void shift(Stack<T> st1, Stack<T> st2) {
-        assert st1 != null : "Violation of: leftStack is not null";
-        assert st2 != null : "Violation of: rightStack is not null";
+    private static <T> void shift(Stack<T> s1, Stack<T> s2) {
+        assert s1 != null : "Violation of: leftStack is not null";
+        assert s2 != null : "Violation of: rightStack is not null";
 
         //Flip stacks, move an element from st1 to st2, flip back
-        st1.flip();
-        st2.flip();
+        s1.flip();
+        s2.flip();
 
-        st2.push(st1.pop());
+        s2.push(s1.pop());
 
-        st1.flip();
-        st2.flip();
+        s1.flip();
+        s2.flip();
     }
 
     /**

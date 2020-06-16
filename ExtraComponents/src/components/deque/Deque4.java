@@ -19,7 +19,7 @@ import java.util.NoSuchElementException;
  * @convention <pre>
  * $this.length >= 0  and
  * [$this.preFront is not null]  and
- * [$this.back is not null]  and
+ * [$this.postBack is not null]  and
  * [$this.preFront points to the first node of a singly linked list
  * containing $this.length + 2 nodes]  and
  * [$this.postBack points to the last node in that singly linked list]  and
@@ -28,7 +28,7 @@ import java.util.NoSuchElementException;
  *
  * @correspondence <pre>
  * this = [data in nodes starting at $this.preFront.next and
- *  running through $this.back]
+ *  running through $this.postBack.previous]
  * </pre>
  */
 public class Deque4<T> extends DequeSecondary<T> {
