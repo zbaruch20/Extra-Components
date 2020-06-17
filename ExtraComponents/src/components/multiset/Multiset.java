@@ -13,7 +13,7 @@ import components.set.Set;
 public interface Multiset<T> extends MultisetKernel<T> {
 
     /**
-     * Adds to {@code this} all elements of {@code s}, clearing {@code s}.
+     * Adds to {@code this} all elements of {@code s}.
      *
      * @param s
      *            the {@code Set} whose elements are to be added to {@code this}
@@ -26,7 +26,7 @@ public interface Multiset<T> extends MultisetKernel<T> {
     void add(Set<T> s);
 
     /**
-     * Adds to {@code this} all elements of {@code ms}, clearing {@code ms}.
+     * Adds to {@code this} all elements of {@code ms}.
      *
      * @param ms
      *            the {@code Multiset} whose elements are to be added to

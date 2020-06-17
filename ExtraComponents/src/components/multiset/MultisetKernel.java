@@ -18,8 +18,8 @@ import components.standard.Standard;
  *  ensures
  *   this = {}
  * (Set{@literal <T>} s):
- *  aliases
- *   [all entries of s]
+ *  clears
+ *   s
  *  ensures
  *   this = s
  * </pre>
